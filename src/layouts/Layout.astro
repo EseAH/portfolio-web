@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+
 interface Props {
 	title: string;
 }
@@ -17,6 +19,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+		<Header />
 		<slot />
 	</body>
 </html>
@@ -37,15 +41,10 @@ const { title } = Astro.props;
 		background: #13151a;
 		background-size: 224px;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body {
+		display: flex-row;
+		justify-content: center;
+		color: white;
 	}
 </style>
