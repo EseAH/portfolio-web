@@ -8,36 +8,49 @@ import Hero from '../components/Hero.astro';
 	<main>
 		<section class="w-full mx-auto lg:w-[740px] py-10">
 			<Hero/>
-			<h1>Mi <span class="text-gradient">Portfolio</span></h1>
+			<!-- <h1>Mi <span class="text-gradient">Portfolio</span></h1> -->
 			<p class="instructions">
-				I'm Esequiel, <code>FRONT END DEVELOPER</code> specialized in front end and 3d visualization.
-			<ul role="list" class="link-card-flex">
+				I'm Esequiel, <code>FRONT END DEVELOPER</code> specialized in ReactJS and 3D visualization.
+			<ul class="link-card-flex space-y-6">
 				<Card
 					href=""
-					title="Sobre mi"
+					title="ABOUT ME"
 					body={`Hi, I'm Esequiel, a front-end software developer from Santa Fe, Argentina.
-					My primary tools of choice includes:
-					- JavaScript
-					- React
-					- Astro
-					- Nodejs. 
-					Beyond coding, I'm passionate about design, illustration, architectural visualization and 3D modelling.	Although I have my favorite tools, I am a person open to adopt new technologies. I try to find the right solution for each project.`}
+					Beyond coding, I'm passionate about design, illustration, architectural visualization and 3D modelling.	Although I have my favorite tools, I am a person open to adopt new technologies. I try to find the right solution for each project.
+					My primary tools of choice includes:`}
+					items={[
+						'• JavaScript',
+						'• React',
+						'• Astro',
+						'• Nodejs'
+					]}
 				/>
-				<Card
+				<!-- <Card
 					href=""
 					title="Proyectos"
 					body="Mis proyectos"
-				/>
+				/> -->
 				<Card
 					href=""
-					title="Estudios"
-					body="University..."
+					title="STUDIES"
+					body={`University`}
+					items={[
+						'• Tecnicatura Universitaria en Software Libre - Universidad Nacional del Litoral (in progress)',
+						'• Arquitectura y Urbanismo - Universidad Nacional del Litoral (unfinished)',
+						'• Bootcamp Full Stack Web Developer - Henry (2022)',
+					]}
+					
 				/>
-				<Card
+				<!-- <Card
 					href=""
-					title="Contacto"
-					body="Contact me for..."
-				/>
+					title="CONTACT"
+					body="Contact me through the following platforms:"
+					items={[
+						'• {linkedin()}',
+						'• [GitHub](https://github.com/your-username)',
+						'• [Gmail](mailto:your-email@gmail.com)'
+					]}
+				/> -->
 			</ul>
 		</section>
 	</main>
@@ -69,6 +82,7 @@ import Hero from '../components/Hero.astro';
 		background-position: 0%;
 	}
 	.instructions {
+		margin-top: 2rem;
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
 		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));

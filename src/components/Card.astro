@@ -2,21 +2,26 @@
 interface Props {
 	title: string;
 	body: string;
-	href: string;
+	href?: string;
+	items?: string[];
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, items } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a >
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
-		<p>
+		<p class="text-lg">
 			{body}
 		</p>
+		<ul>
+			{items && items.map((item) => (
+				<li class="text-lg">{item}</li>
+			))}
+		</ul>
 	</a>
 </li>
 <style>
@@ -51,10 +56,10 @@ const { href, title, body } = Astro.props;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
-	.link-card:is(:hover, :focus-within) {
+	/* .link-card:is(:hover, :focus-within) {
 		background-position: 0;
 		background-image: var(--accent-gradient);
-	}
+	} */
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
 	}
